@@ -18,11 +18,13 @@ documentation can be found here:
    (green is ideal, yellow is permissible).
 7. Repeat with B, C, D as you like. If you want to keep the exact alignment
    that you already had in A, do as follows:
-   1. Right click A -> Bild/A and do "Merge Layer Group".
-   2. Edit -> Copy (Ctrl-C).
-   3. Change active layer to destination layer placeholder, e.g., B -> Bild/B -> Placeholder #1.
-   4. Edit -> Paste (Ctrl-V).
-   5. Layer -> Anchor Layer (Ctrl-H).
+   1. Right click A -> Bild/A and do "Merge Layer Group", then do "Apply layer
+	  mask".
+   2. Layer -> Crop to Content.
+   3. Edit -> Copy (Ctrl-C).
+   4. Change active layer to destination layer placeholder, e.g., B -> Bild/B -> Placeholder #1.
+   5. Edit -> Paste (Ctrl-V).
+   6. Layer -> Anchor Layer (Ctrl-H).
 8. Print out as a 10x15 picture.
 
 ## License
