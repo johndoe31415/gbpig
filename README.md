@@ -8,15 +8,21 @@ documentation can be found here:
 
 ## Usage
 1. Open the template.xcf image in the GIMP.
-2. Paste image into layer A -> Bild/A.
+2. Paste photograph as new layer as child of A -> Bild/A. The layer mask
+   ensures it is correctly clipped.
 3. Enable layers for either child or adult (by default, adult is active).
 4. Align nose and eyes with layers.
 5. Show chin and head layer. Move chin/head layer so that the red line stops at
    the chin.
 6. Now resize image that end of head stays within the green/yellow head area
    (green is ideal, yellow is permissible).
-7. Repeat with B, C, D (you can copy and paste the image in place, so you won't
-   have to re-align every time).
+7. Repeat with B, C, D as you like. If you want to keep the exact alignment
+   that you already had in A, do as follows:
+   1. Right click A -> Bild/A and do "Merge Layer Group".
+   2. Edit -> Copy (Ctrl-C).
+   3. Change active layer to destination layer placeholder, e.g., B -> Bild/B -> Placeholder #1.
+   4. Edit -> Paste (Ctrl-V).
+   5. Layer -> Anchor Layer (Ctrl-H).
 8. Print out as a 10x15 picture.
 
 ## License
