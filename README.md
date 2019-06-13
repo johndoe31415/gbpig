@@ -1,4 +1,4 @@
-# biometric-passport
+# German Biometric Passport Image
 This is a template that was created from the orginal Bundesdruckerei PDFs and
 that works for both adults and children under the age of 10. Original
 documentation can be found here:
@@ -17,6 +17,7 @@ documentation can be found here:
    (green is ideal, yellow is permissible).
 7. Repeat with B, C, D (you can copy and paste the image in place, so you won't
    have to re-align every time).
+8. Print out as a 10x15 picture.
 
 ## License
 CC-BY-SA 3.0.
