@@ -7,7 +7,7 @@ documentation can be found here:
   * [For children](https://www.bmi.bund.de/SharedDocs/downloads/DE/veroeffentlichungen/themen/moderne-verwaltung/ausweise/passbild-schablone-kinder.pdf)
 
 ## Usage
-1. Open the template.xcf image in the GIMP.
+1. Open the template.xcf image in the GIMP. You need at least GIMP 2.10.
 2. Paste photograph as new layer as child of A -> Bild/A. The layer mask
    ensures it is correctly clipped.
 3. Enable layers for either child or adult (by default, adult is active).
