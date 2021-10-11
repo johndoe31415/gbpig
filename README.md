@@ -97,7 +97,7 @@ person on this image does not exist.
 
 ![Source image](https://raw.githubusercontent.com/johndoe31415/gbpig/master/example.jpg)
 
-When a 150 x 100mm image is genearted from this, this is the output:
+When a 100 x 150mm image is genearted from this, this is the output:
 
 ![Output image](https://raw.githubusercontent.com/johndoe31415/gbpig/master/example_print_me.jpg)
 
