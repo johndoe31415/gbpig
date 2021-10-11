@@ -41,20 +41,20 @@ Create the JSON file:
 And then:
 
 ```
-$ ./generate_image image.json print_me.jpg
+$ ./gbpig image.json print_me.jpg
 ```
 
 If you want to use the parameters for children, do:
 
 ```
-$ ./generate_image -t child image.json print_me.jpg
+$ ./gbpig -t child image.json print_me.jpg
 ```
 
 All parameters are shown on the help page:
 
 ```
-$ ./generate_image --help
-usage: generate_image [-h] [-r dpi] [-t {adult,child}] [-b mm] [-l mm] [-W mm]
+$ ./gbpig --help
+usage: gbpig [-h] [-r dpi] [-t {adult,child}] [-b mm] [-l mm] [-W mm]
                       [-H mm] [-c] [-v]
                       json_input_filename image_output_filename
 
