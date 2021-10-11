@@ -1,12 +1,25 @@
 {
 	"image": {
-		"filename": "my_pretty_image.jpg"
+		"filename": "example.jpg",
+		"geometry": [
+			1226,
+			1226
+		]
 	},
 	"pois": {
-		"chin_y": 2123,
-		"head_y": 773,
-		"left_eye": [ 3086, 1436 ],
-		"right_eye": [ 3428, 1431 ],
-		"nose": [ 3268, 1683 ]
+		"chin_y": 1034,
+		"head_y": 162,
+		"left_eye": [
+			494,
+			551
+		],
+		"nose": [
+			584,
+			731
+		],
+		"right_eye": [
+			746,
+			608
+		]
 	}
 }

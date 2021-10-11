@@ -41,13 +41,13 @@ Create the JSON file:
 And then:
 
 ```
-$ ./gbpig image.json print_me.jpg
+$ ./gbpig example.json example_print_me.jpg
 ```
 
 If you want to use the parameters for children, do:
 
 ```
-$ ./gbpig -t child image.json print_me.jpg
+$ ./gbpig -t child example.json example_print_me.jpg
 ```
 
 All parameters are shown on the help page:
@@ -90,6 +90,21 @@ optional arguments:
   -v, --verbose         Increases verbosity. Can be specified multiple times
                         to increase.
 ```
+
+## Example
+Here is an image that is fed as a source. It is deliberately rotated. The
+person on this image does not exist.
+
+![Source image](https://raw.githubusercontent.com/johndoe31415/gbpig/master/example.jpg)
+
+When a 150 x 100mm image is genearted from this, this is the output:
+
+![Output image](https://raw.githubusercontent.com/johndoe31415/gbpig/master/example_print_me.jpg)
+
+To check validity of results, you can specify the `--check` command line
+option, in which case this is the output:
+
+![Output image](https://raw.githubusercontent.com/johndoe31415/gbpig/master/example_check_me.jpg)
 
 ## License
 GNU GPL-3.
