@@ -54,9 +54,9 @@ All parameters are shown on the help page:
 
 ```
 $ ./gbpig --help
-usage: gbpig [-h] [-r dpi] [-t {adult,child}] [-b mm] [-l mm] [-W mm]
-                      [-H mm] [-c] [-v]
-                      json_input_filename image_output_filename
+usage: gbpig [-h] [-r dpi] [-t {adult,child}] [-b mm] [-l mm] [-W mm] [-H mm]
+             [-c] [-v]
+             json_input_filename image_output_filename
 
 Generate a biometric passport photo.
 
