@@ -1,0 +1,3 @@
+[submodule "submodules/geo"]
+	path = submodules/geo
+	url = https://github.com/johndoe31415/geo
