@@ -1,5 +1,5 @@
-# gppig
-gpbig is the German Biometric Passport Image Generator. It was originally some
+# gbpig
+gbpig is the German Biometric Passport Image Generator. It was originally some
 GIMP templates, but is now a Python script that takes any image along with the
 following metadata in JSON format:
 
