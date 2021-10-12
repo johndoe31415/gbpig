@@ -32,8 +32,7 @@ Create the JSON file:
         "head_y": 773,
         "left_eye": [ 3086, 1436 ],
         "right_eye": [ 3428, 1431 ],
-		"nose": [ 3268, 1683 ]
-
+        "nose": [ 3268, 1683 ]
     }
 }
 ```
