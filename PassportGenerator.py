@@ -51,7 +51,7 @@ class PassportGenerator():
 		subprocess.check_call(cmd)
 
 	def _run_check(self):
-		cmdline = [ "convert", self._in["image"]["filename"] ]
+		cmdline = [ "magick", self._in["image"]["filename"] ]
 		print("Left eye   : %.0f, %.0f" % (self._left_eye.x, self._left_eye.y))
 		print("Right eye  : %.0f, %.0f" % (self._right_eye.x, self._right_eye.y))
 		print("Nose       : %.0f, %.0f" % (self._nose.x, self._nose.y))
@@ -229,7 +229,7 @@ class PassportGenerator():
 		return cmdline
 
 	def _create_image(self):
-		cmdline = [ "convert", "-size", "%.0fx%.0f" % (self._dimension_canvas_px.x, self._dimension_canvas_px.y), "xc:yellow" if self._args.check else "xc:white" ]
+		cmdline = [ "magick", "-size", "%.0fx%.0f" % (self._dimension_canvas_px.x, self._dimension_canvas_px.y), "xc:yellow" if self._args.check else "xc:white" ]
 		text = "Target size: %.0f x %.0f mm, definitions for %s. Inner image %.0f x %.0fmm, bordered image %.0f x %.0fmm. Border size %.0f mm, cutmarks %.0fmm. %d dpi." % (self._dimension_canvas_mm.x, self._dimension_canvas_mm.y, self._args.picture_type, self._image_dimension_mm.x, self._image_dimension_mm.y, self._bordered_image_dimension_mm.x, self._bordered_image_dimension_mm.y, self._args.border_size, self._args.line_size, self._args.resolution)
 		cmdline += ImageTools.imagemagick_draw_text(self._to_px(geo.Vector2d(2, 2)) + geo.Vector2d(0, 16), text, color = "#000000", font_size = 16)
 		for placement_at_mm in self._get_image_placements():

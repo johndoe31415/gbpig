@@ -19,8 +19,59 @@ of 10. Original documentation can be found here:
   * [For adults](https://www.bmi.bund.de/SharedDocs/downloads/DE/veroeffentlichungen/themen/moderne-verwaltung/ausweise/passbild-schablone-erwachsene.pdf)
   * [For children](https://www.bmi.bund.de/SharedDocs/downloads/DE/veroeffentlichungen/themen/moderne-verwaltung/ausweise/passbild-schablone-kinder.pdf)
 
+## Detailed Install instructions
+### For Ubuntu Users
+
+Note: the following guide is tailored for ubuntu users. Other distros or OSes might have different procedures, which you can follow on the official pages for each project.
+
+1. Download or clone this github repo. Navigate into the repo folder and make sure you pull the submodule [geo](https://github.com/johndoe31415/geo) with the following command in the terminal.
+```shell
+git submodule update --init
+```
+2. Install GIMP or any image processing tool for your distribution.
+```shell
+sudo apt-get install gimp #ubuntu
+```
+3. Make sure to install the following packages that are important for usage with the Imagemagick tool (i.e) some of the important dependencies.
+```shell
+sudo apt install libjpeg-dev libpng-dev libtiff-dev libfreetype6-dev libltdl-dev -y
+```
+4. Next let's install [Imagemagick 7.1.1-45](https://github.com/ImageMagick/ImageMagick/releases)(latest at this time) by compiling from source. Use these commands below or follow the [offical guide✅](https://imagemagick.org/script/install-source.php)
+```shell
+git clone --depth 1 --branch 7.1.1-45 https://github.com/ImageMagick/ImageMagick.git ImageMagick-7.1.1
+cd ImageMagick-7.1.1
+./configure --with-modules
+make -j8
+sudo make install
+```
+
+### For Windows Users
+
+1. Download or clone this github repo. Navigate into the repo folder and make sure you pull the submodule [geo](https://github.com/johndoe31415/geo) with the following command in the Command Prompt.
+```cmd
+git.exe submodule update --init
+```
+
+2. Download the latest **ImageMagick Windows Binary Release** (e.g., 'ImageMagick-7.1.1-47-Q16-HDRI-x64-dll.exe') from the [official download page](https://imagemagick.org/script/download.php#windows).  
+
+3. During installation, make sure to check the option **"Add application directory to your system PATH"**.  
+   If you forgot, you can add it manually:
+   - Press `Win + R`, type `sysdm.cpl`, go to **Advanced > Environment Variables**
+   - Under **System variables**, find `Path`, click **Edit**, and add your ImageMagick application directory, e.g.:
+     ```
+     C:\Program Files\ImageMagick-7.1.1-Q16\
+     ```
+
+4. Use `python.exe gbpig` instead of `./gbpig` in the following usage instructions. For example:
+
+   ```cmd
+   python.exe gbpig example.json example_print_me.jpg
+   ```
+
 ## Usage
 Create the JSON file:
+
+Open the image with GIMP or any image processing tool. Use the crosshair to find the coordinates of the POIs.
 
 ```json
 {

@@ -19,6 +19,13 @@
 #
 #	Johannes Bauer <JohannesBauer@gmx.de>
 
+import sys
+from pathlib import Path
+
+# Resolve actual path before import geo
+submodule_path = Path(__file__).parent / "submodules" / "geo"
+sys.path.insert(0, str(submodule_path))
+
 import geo
 import subprocess
 import json
@@ -26,7 +33,7 @@ import json
 class ImageTools():
 	@classmethod
 	def get_image_geometry(cls, filename):
-		json_data = subprocess.check_output([ "convert", filename, "json:-" ])
+		json_data = subprocess.check_output([ "magick", filename, "json:-" ])
 		data = json.loads(json_data)
 		image = data[0]["image"]
 		return (image["geometry"]["width"], image["geometry"]["height"])
@@ -61,10 +68,10 @@ class ImageTools():
 		return [ "-stroke", stroke or "none", "-strokewidth", str(stroke_width), "-fill", fill or "none", "-draw", "rectangle %f,%f %f,%f" % (box.base.x, box.base.y, upper.x, upper.y) ]
 
 	@classmethod
-	def imagemagick_draw_text(cls, pos, text, color = "red", font = "Arial", font_size = 12):
+	def imagemagick_draw_text(cls, pos, text, color = "red", font = "./FreeSans.otf", font_size = 12):
 		return [ "-stroke", "none", "-fill", color, "-font", font, "-pointsize", str(font_size), "-draw", "text %f,%f '%s'" % (pos.x, pos.y, text) ]
 
 	@classmethod
 	def imagemagick_blit(cls, infile, affine, cropbox, virtual = "Transparent"):
 		matrix = ",".join("%f" % (value) for value in affine.aslist)
-		return [ "(", infile, "-virtual-pixel", virtual, "-affine", matrix, "-transform", "-crop", "%.0fx%.0f+%.0f+%.0f" % (cropbox.dimensions.x, cropbox.dimensions.y, cropbox.base.x, cropbox.base.y), ")", "-flatten" ]
+		return [ "(", infile, "-virtual-pixel", virtual, "+distort", "AffineProjection", matrix, "-crop", "%.0fx%.0f+%.0f+%.0f" % (cropbox.dimensions.x, cropbox.dimensions.y, cropbox.base.x, cropbox.base.y), ")", "-flatten" ]
